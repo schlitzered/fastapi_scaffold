@@ -1,4 +1,3 @@
-import socket
 import typing
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -11,8 +10,6 @@ log_levels = typing.Literal[
 class App(BaseModel):
     loglevel: log_levels = "INFO"
     secretkey: str = "secret"
-    host: str = "127.0.0.1"
-    port: int = 8000
 
 
 class Ldap(BaseModel):

@@ -230,7 +230,3 @@ async def add_process_time_header(request, call_next):
     process_time = time.time() - start_time
     response.headers["X-Process-Time"] = str(process_time)
     return response
-
-
-def main():
-    uvicorn.run(app, host=settings.app.host, port=settings.app.port)
